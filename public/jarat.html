@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Járat Nyilvántartás</title>
+    <style>
+        .form-container {
+            width: 450px;
+            margin: 50px auto;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <fieldset>
+            <legend>Járat Rögzítés</legend>
+            <form id="jaratForm">
+                <p>
+                    <label for="jarat_id">Járat ID:</label>
+                    <input type="number" id="jarat_id" name="jarat_id" required placeholder="Járat azonosító..." />
+                </p>
+                <p>
+                    <label for="jarat_szam">Járat szám:</label>
+                    <input type="text" id="jarat_szam" name="jarat_szam" required placeholder="Pl. J1234" />
+                </p>
+                <p>
+                    <label for="indulasi_hely">Indulási hely:</label>
+                    <input type="text" id="indulasi_hely" name="indulasi_hely" required placeholder="Pl. Budapest" />
+                </p>
+                <p>
+                    <label for="erkezesi_hely">Érkezési hely:</label>
+                    <input type="text" id="erkezesi_hely" name="erkezesi_hely" required placeholder="Pl. Debrecen" />
+                </p>
+                <p>
+                    <label for="indulasi_ido">Indulási idő:</label>
+                    <input type="datetime-local" id="indulasi_ido" name="indulasi_ido" required />
+                </p>
+                <p>
+                    <label for="erkezesi_ido">Érkezési idő:</label>
+                    <input type="datetime-local" id="erkezesi_ido" name="erkezesi_ido" required />
+                </p>
+                <p>
+                    <button type="submit">Járat Rögzítése</button>
+                </p>
+            </form>
+        </fieldset>
+
+        <h3>Járatok Táblázata</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Járat ID</th>
+                    <th>Járat szám</th>
+                    <th>Indulási hely</th>
+                    <th>Érkezési hely</th>
+                    <th>Indulási idő</th>
+                    <th>Érkezési idő</th>
+                </tr>
+            </thead>
+            <tbody id="jaratTable"><!-- Ide jönnek az adatok --></tbody>
+        </table>
+    </div>
+
+    <script src="jarat.js"></script>
+</body>
+</html>
